@@ -1,20 +1,26 @@
 require 'nokogiri'
 require 'open-uri'
 
+
 def scapering
   url = "https://www3.bflix.to/home"
   html = open("#{url}").read
   nokogiri_doc = Nokogiri::HTML(html)
-  final_array = []
+  movie_listings = nokogiri_doc.css('div.item')
+  movies = []
 
-  nokogiri_doc.search(".info h3").each do |element| 
-    element = element.text
-    final_array << element
-  end 
-
-  final_array.each_with_index do |element, index|
-    puts "#{index + 1} - #{element}"
+  movie_listings.each do |movie_listing|
+    movie = {
+      title: movie_listing.css('.info h3').text,
+      date: movie_listing.css('.info span').text,
+      url: "https://www3.bflix.to" + movie_listing.css('a')[0].attributes["href"].value
+    }
+    movies << movie
+      
   end
+  puts movies
+  puts movies.count
 end
 
 scapering
+
