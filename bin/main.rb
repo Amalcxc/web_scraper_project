@@ -1,26 +1,17 @@
-require_relative '../lib/logic.rb'
+require_relative '../lib/logic'
 
 scrapar = Scrapar.new
 scrapar.scraparing
-puts  "the movies with the release date"
+puts 'the movies with the release date'
 
 title = scrapar.movies
 types = scrapar.movies_quality
-date = scrapar.movies_date  
+date = scrapar.movies_date
 
 types.each_with_index do |element, index|
-  if element == "Movie"
-    scrapar.new_quality << index  
-  end
+  scrapar.new_quality << index if element == 'Movie'
 end
 scrapar.new_quality.each do |index|
- puts  "- - - index: #{index + 1} - - -"
- puts "title: #{title[index]} | types: #{types[index]} | date: #{date[index][0..4]}"
-end 
-
-
-
-
-
-
-
+  puts "- - - index: #{index + 1} - - -"
+  puts "title: #{title[index]} | types: #{types[index]} | date: #{date[index][0..4]}"
+end
