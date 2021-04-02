@@ -8,10 +8,6 @@ This Web scraper extracts content and data from a [BFLIX](https://www3.bflix.to/
 
 ![screenshot](Screen.jpg)
 
-## Ruby web scraper for movies 
--
-
-
 ## Built With
 
 - Ruby
