@@ -1,11 +1,12 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-#web scraper project
+
+# web scraper project
 
 ## Description
 This Web scraper extracts content and data from a [BFLIX](https://www3.bflix.to/). removes underlying HTML code and, gets us back the Names, types, and release dates of the movies on site. The scraper can then replicate the entire website data anywhere.
 
 
-![TicTacToe](Screen Shot 2021-04-02 at 8.46.01 PM.jpg)
+![screenshot](Screen.jpg)
 
 ## Ruby web scraper for movies 
 -
