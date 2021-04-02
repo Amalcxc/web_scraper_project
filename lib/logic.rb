@@ -1,5 +1,5 @@
 require 'nokogiri'
-require 'open-uri'
+require 'httparty'
 
 # this class spcraper information the movie side
 class Scrapar
@@ -7,7 +7,7 @@ class Scrapar
 
   def initialize
     url = 'https://www3.bflix.to/home'
-    html = open(url.to_s).read
+    html = HTTParty.get(url)
     @nokogiri_doc = Nokogiri::HTML(html)
     @movies = []
     @movies_quality = []
