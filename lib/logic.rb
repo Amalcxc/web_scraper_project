@@ -24,7 +24,7 @@ class Scrapar
         date: movie_listing.css('.info span').text
       }
       movie_quality = {
-        quality: movie_listing.css('.quality').text
+        quality: movie_listing.css('.type').text
       }
 
      
@@ -41,7 +41,7 @@ class Scrapar
 
     
     types.each_with_index do |element, index|
-      if element == "CAM"
+      if element == "Movie"
         @new_quality << index  
       end
     end
@@ -49,7 +49,6 @@ class Scrapar
       puts "- - - index: #{index + 1} - - -"
       puts "title: #{title[index]} | types: #{types[index]} | date: #{date[index][0..4]}"
     end   
-  
   end
  
 end
