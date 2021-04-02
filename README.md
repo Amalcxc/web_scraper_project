@@ -17,6 +17,9 @@ This Web scraper extracts content and data from a [BFLIX](https://www3.bflix.to/
 To get a local copy up and running follow these simple example steps.
 
 ### How to Use the Web Scraper
+- open the local terminal
+- write ruby bin/main.rb
+- choose movie a name and hit enter
 
 ### Prerequisites
 
