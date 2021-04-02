@@ -1,9 +1,14 @@
-# web_scraper_project
-a web scraper for movies 
-
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+#web scraper project
+
+## Description
+This Web scraper extracts content and data from a [BFLIX](https://www3.bflix.to/). removes underlying HTML code and, gets us back the Names, types, and release dates of the movies on site. The scraper can then replicate the entire website data anywhere.
+
+
+![TicTacToe](Screen Shot 2021-04-02 at 8.46.01 PM.jpg)
 
 ## Ruby web scraper for movies 
+-
 
 
 ## Built With
@@ -59,6 +64,9 @@ ruby bin/main.rb
 3. Go to your local project repository with the cd command.
 4. To run the test examples, run the following command into your terminal: </br>
 ``` rspec ```
+
+## sources 
+- [BFLIX website](https://www3.bflix.to/)
 
 ## Author
 
