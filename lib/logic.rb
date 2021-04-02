@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'httparty'
 
 # this class spcraper information the movie side
-class Scrapar
+class Scraper
   attr_accessor :nokogiri_doc, :movies, :movies_quality, :movies_date, :new_quality
 
   def initialize
@@ -15,7 +15,7 @@ class Scrapar
     @new_quality = []
   end
 
-  def scraparing
+  def scrapering
     movie_listings = @nokogiri_doc.css('div.item')
     movie_listings.each do |movie_listing|
       movie = {
