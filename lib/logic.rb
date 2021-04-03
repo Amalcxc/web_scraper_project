@@ -3,7 +3,7 @@ require 'httparty'
 
 # this class spcraper information the movie side
 class Scraper
-  attr_accessor :nokogiri_doc, :movies, :movies_quality, :movies_date, :new_quality, :new_title
+  attr_accessor :nokogiri_doc, :movies, :movies_quality, :movies_date, :new_title
 
   def initialize
     url = 'https://www3.bflix.to/home'
@@ -12,16 +12,14 @@ class Scraper
     @movies = []
     @movies_quality = []
     @movies_date = []
-    @new_quality = []
     @new_title = []
-    @new_date = []
   end
 
   def scrapering
     movie_listings = @nokogiri_doc.css('div.item')
     movie_listings.each do |movie_listing|
       movie = {
-        title: movie_listing.css('.info h3').text,
+        title: movie_listing.css('.info h3').text.downcase,
         date: movie_listing.css('.info span').text,
         quality: movie_listing.css('.type').text
       }
