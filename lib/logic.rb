@@ -13,7 +13,7 @@ class Scraper
     @movies_quality = []
     @movies_date = []
     @new_title = []
-    @new_quality= []
+    @new_quality = []
   end
 
   def scrapering
