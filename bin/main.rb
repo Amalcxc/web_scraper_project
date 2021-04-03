@@ -3,7 +3,7 @@ require_relative '../lib/logic'
 scraper = Scraper.new
 scraper.scrapering
 
-title = scraper.movies
+title = scraper.movies 
 types = scraper.movies_quality
 date = scraper.movies_date
 
@@ -15,6 +15,8 @@ while scraper.scrapering
   puts 'Choose A Movie/Show Name:'
   input = gets.chomp.downcase
   scraper.new_title = []
+  scraper.new_quality= []
+
   break if input == 'quit'
 
   title.each_with_index do |element, index|
@@ -27,4 +29,13 @@ while scraper.scrapering
     puts "- - - index: #{index + 1} - - -"
     puts "title: #{title[index]} | types: #{types[index]} | date/season: #{date[index][0..4]}"
   end
+
+  types.each_with_index do |element, index|
+    scraper.new_quality << index if element.include?(input)
+  end
+
+  scraper.new_quality.each do |index|
+    puts "- - - index: #{index + 1} - - -"
+    puts "title: #{title[index]} | types: #{types[index]} | date: #{date[index][0..4]}"
+  end   
 end

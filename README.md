@@ -20,6 +20,7 @@ To get a local copy up and running follow these simple example steps.
 - open the local terminal
 - write ruby bin/main.rb
 - choose movie a name and hit enter
+- write movie/tv to get only movies/shows
 - use "quit" to get put of the loop
 
 ### Prerequisites
