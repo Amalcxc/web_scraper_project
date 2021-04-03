@@ -7,15 +7,26 @@ title = scraper.movies
 types = scraper.movies_quality
 date = scraper.movies_date
 
-puts 'choose a movie/Show name'
-input = gets.chomp.downcase
+puts title[0..11]
 
-title.each_with_index do |element, index|
-  scraper.new_title << index if element.include?(input)
-end
-puts 'no movie with that name' if scraper.new_title.empty?
+puts "Use Quit To Stop The Loop"
 
-scraper.new_title.each do |index|
-  puts "- - - index: #{index + 1} - - -"
-  puts "title: #{title[index]} | types: #{types[index]} | date/season: #{date[index][0..4]}"
-end
+while scraper.scrapering
+  puts 'Choose A Movie/Show Name:'
+  input = gets.chomp.downcase
+  scraper.new_title = []
+  break if input == "quit" 
+
+  title.each_with_index do |element, index|
+    scraper.new_title << index if element.include?(input)
+  end
+
+  puts 'No Movie with That Name' if scraper.new_title.empty?
+  
+  scraper.new_title.each do |index|
+    puts "- - - index: #{index + 1} - - -"
+    puts "title: #{title[index]} | types: #{types[index]} | date/season: #{date[index][0..4]}"
+  end
+end  
+
+
